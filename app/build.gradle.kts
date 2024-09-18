@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
@@ -40,7 +43,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+        kotlinCompilerExtensionVersion = "1.6.0"
     }
     packaging {
         resources {
@@ -66,4 +69,30 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    // Compose dependencies
+    implementation (libs.androidx.lifecycle.viewmodel.compose)
+    implementation (libs.androidx.navigation.compose)
+    implementation (libs.androidx.material.icons.extended)
+    implementation (libs.androidx.hilt.navigation.compose)
+    // Coroutines
+    implementation (libs.kotlinx.coroutines.core)
+    implementation (libs.kotlinx.coroutines.android)
+    // Coroutine Lifecycle Scopes
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.5")
+    implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.3.1")
+    //Dagger - Hilt
+    implementation (libs.hilt.android)
+    kapt (libs.hilt.compiler)
+    // Room
+    implementation (libs.androidx.room.runtime)
+    kapt ("androidx.room:room-compiler:2.6.1")
+    implementation (libs.androidx.room.ktx)
+    // Retrofit
+    implementation (libs.retrofit)
+    implementation (libs.converter.gson)
+    implementation (libs.okhttp)
+    implementation (libs.logging.interceptor)
+    // Timber
+    implementation (libs.timber)
 }
