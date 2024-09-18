@@ -8,6 +8,7 @@ val DefColor = Color(0f, 0f, 1f, 0.44f)
 val SpAtkColor = Color(0.671f, 0f, 1f, 0.57f)
 val SpDefColor = Color(1f, 0f, 0.8f, 0.7f)
 val SpdColor = Color(0f, 1f, 0.063f, 0.55f)
+val LightBlue = Color(0xFFADD8E6)
 
 val TypeNormal = Color(0xFFA8A77A)
 val TypeFire = Color(0xFFEE8130)
